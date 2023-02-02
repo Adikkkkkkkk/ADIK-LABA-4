@@ -1,0 +1,44 @@
+const reverseArr = (array) => 
+{
+    if(array.length === 1)
+    {
+        return array
+    }
+    else if(array.length === 2)
+    {
+        array = [array[1],array[0]]
+        return array
+    }
+    else if (array.length === 3)
+    {
+        let a = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = a; 
+        return array;
+    }
+    else
+    {
+        let a = array[0];
+        let b = array[1];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = a; 
+        array[1] = array[array.length - 2];
+        array[array.length - 2] = b; 
+        return array;
+    }
+}
+
+const names = ['adik','padik','sadik'];
+const boolEan = ['true','false'];
+const turtles = ['leo','donnie','raf','mickey'];
+const single = ['one'];
+
+console.log(reverseArr(single));
+reverseArr(names);
+console.log(names);
+reverseArr(names);
+console.log(names);
+console.log(reverseArr(boolEan));
+console.log(reverseArr(turtles));
+
+

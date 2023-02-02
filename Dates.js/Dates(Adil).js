@@ -9,7 +9,5 @@ const getWeekends = (input) =>
     else {return ''}
 }
 
-console.log(getWeekends());
-console.log(getWeekends('long'));
-console.log(getWeekends('short'));
+
 
