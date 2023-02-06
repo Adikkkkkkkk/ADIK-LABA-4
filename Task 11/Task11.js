@@ -1,36 +1,19 @@
-
-
-const makeCensored = (text, n_words) =>
+const makeCensored = (sentence, n_words) => 
 {
-    result = [];
-    const wordsArr = text.split(' ');
-    for(i = 0; wordsArr.length; i++)
+    let sentenceArr = sentence.split(' ');
+    let result = '';
+    for(let i = 0; i < sentenceArr.length; i++)
     {
-        if(wordsArr.includes(n_words))
+        if(n_words.includes(sentenceArr[i]))
         {
-           result.push('$#%!') 
+            sentenceArr[i] = '!@#$';
         }
-        else{result += ` ${wordsArr[i]}`;}
-    }
+        result += sentenceArr[i] + ' ';
+    } 
     return result;
 }
 
-const test = (text, n_words) => 
-{
-    result = ''
-    textArr = text.split(' ');
-for(const word of n_words)
-{
-    let j = `${word}`
-    for(const wordT of textArr)
-    {
-        strWordT = `${wordT}`;
-        if(strWordT.includes(j)){result += '$#%!'}
-        else{result += `${wordT}`}
-    }
-}
-    return result;
-}
 
-//console.log(test("I'm the best !", ['best','!']));
-console.log(test('hello world !', ['hello', '!']))
+
+console.log(makeCensored('Жил без страха и умер без страха', ['страха', 'умер']));  
+
