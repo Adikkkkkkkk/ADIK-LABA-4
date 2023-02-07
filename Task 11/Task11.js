@@ -1,19 +1,14 @@
-const makeCensored = (sentence, n_words) => 
-{
-    let sentenceArr = sentence.split(' ');
-    let result = '';
-    for(let i = 0; i < sentenceArr.length; i++)
-    {
-        if(n_words.includes(sentenceArr[i]))
-        {
-            sentenceArr[i] = '!@#$';
+const makeCensored = (text, n_words) => {
+    let result = "";
+    let censore = "#$%@";
+    let arrayCount = text.split(" ");
+    for(let i = 0; i < arrayCount.length; i++) {
+        if(n_words.includes(textArr[i])) {
+            arrayCount[i] = censore;
         }
-        result += sentenceArr[i] + ' ';
-    } 
-    return result;
-}
+        result += arrayCount[i] + " ";
+    }
+return result;
+} 
 
-
-
-console.log(makeCensored('Жил без страха и умер без страха', ['страха', 'умер']));  
-
+console.log(makeCensored('', ['','']));
